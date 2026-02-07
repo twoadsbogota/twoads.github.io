@@ -3,79 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>TwoAds | Marketing Digital que Vende</title>
 
-  <!-- SEO -->
-  <meta name="description" content="TwoAds Marketing Digital. Creamos sitios web, landing pages y publicidad digital para vender más.">
-  <meta name="keywords" content="marketing digital, landing page, publicidad online, google ads, facebook ads">
-  <meta name="author" content="TwoAds Marketing Digital">
+  <meta name="description" content="TwoAds Marketing Digital. Sitios web, landing pages y publicidad online para vender más.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="TwoAds Marketing Digital">
-  <meta property="og:description" content="Sitios web, landing pages y publicidad digital que convierte.">
-  <meta property="og:image" content="img/logo-twoads.png">
-  <meta property="og:type" content="website">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
 
-  <link rel="stylesheet" href="css/styles.css">
+    header {
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    header img {
+      max-width: 260px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: #22c55e;
+      color: white;
+      padding: 15px 35px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      text-align: center;
+    }
+
+    .cta {
+      background: #020617;
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    svg {
+      width: 100%;
+      max-width: 220px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <img src="img/logo-twoads.png" alt="TwoAds Marketing Digital" class="logo">
+<header>
+  <!-- TU LOGO -->
+  <img src="logo-twoads.png" alt="TwoAds Marketing Digital">
 
-    <h1>Marketing digital que convierte visitas en clientes</h1>
-    <p>Diseñamos sitios web, landing pages y publicidad digital pensada para vender, no solo verse bonita.</p>
+  <h1>Marketing digital que convierte visitas en clientes</h1>
+  <p>Diseñamos sitios web, landing pages y publicidad digital enfocada en resultados reales.</p>
+  <a href="#contacto" class="btn">Agenda asesoría gratuita</a>
+</header>
 
-    <a href="#contacto" class="btn">Agenda asesoría gratuita</a>
-  </header>
+<section>
+  <h2>¿Por qué no estás vendiendo?</h2>
 
-  <!-- PROBLEMAS -->
-  <section class="section">
-    <h2>¿Te suena familiar?</h2>
-
-    <div class="grid">
-      <div class="card">❌ Tienes redes pero no vendes</div>
-      <div class="card">❌ Pagas anuncios sin resultados</div>
-      <div class="card">❌ Tu negocio no genera confianza</div>
-      <div class="card">❌ No tienes estrategia digital</div>
+  <div class="grid">
+    <div class="card">
+      <!-- SVG CREADO -->
+      <svg viewBox="0 0 200 120">
+        <rect width="200" height="120" rx="12" fill="#e5e7eb"/>
+        <circle cx="60" cy="60" r="22" fill="#ef4444"/>
+        <rect x="100" y="40" width="70" height="12" fill="#9ca3af"/>
+        <rect x="100" y="60" width="50" height="12" fill="#9ca3af"/>
+      </svg>
+      <p>Tienes redes sociales, pero no vendes</p>
     </div>
-  </section>
 
-  <!-- SERVICIOS -->
-  <section class="section light">
-    <h2>Nuestras soluciones</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>🌐 Sitios Web Profesionales</h3>
-        <p>Webs rápidas, modernas y optimizadas para Google.</p>
-      </div>
-
-      <div class="card">
-        <h3>🎯 Landing Pages</h3>
-        <p>Páginas enfocadas en conversión y campañas.</p>
-      </div>
-
-      <div class="card">
-        <h3>📢 Publicidad Digital</h3>
-        <p>Google Ads y Meta Ads con segmentación inteligente.</p>
-      </div>
+    <div class="card">
+      <svg viewBox="0 0 200 120">
+        <rect width="200" height="120" rx="12" fill="#e5e7eb"/>
+        <circle cx="100" cy="60" r="28" fill="#f97316"/>
+        <line x1="40" y1="20" x2="160" y2="100" stroke="#020617" stroke-width="6"/>
+      </svg>
+      <p>Pagas publicidad sin resultados</p>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cta" id="contacto">
-    <h2>Haz que internet trabaje para ti</h2>
-    <p>Agenda una asesoría gratuita y lleva tu negocio al siguiente nivel.</p>
+    <div class="card">
+      <svg viewBox="0 0 200 120">
+        <rect width="200" height="120" rx="12" fill="#e5e7eb"/>
+        <rect x="40" y="30" width="120" height="60" fill="#60a5fa"/>
+        <text x="100" y="65" text-anchor="middle" fill="white" font-size="16">WEB</text>
+      </svg>
+      <p>Tu negocio no genera confianza online</p>
+    </div>
+  </div>
+</section>
 
-    <a href="https://wa.me/573000000000" class="btn">Hablar por WhatsApp</a>
-  </section>
+<section>
+  <h2>Nuestras soluciones</h2>
 
-  <footer>
-    © 2026 TwoAds Marketing Digital · Todos los derechos reservados
-  </footer>
+  <div class="grid">
+    <div class="card">
+      <svg viewBox="0 0 200 120">
+        <rect width="200" height="120" rx="12" fill="#dbeafe"/>
+        <rect x="30" y="30" width="140" height="60" fill="#2563eb"/>
+      </svg>
+      <h3>Sitios Web</h3>
+      <p>Profesionales, rápidos y optimizados para Google.</p>
+    </div>
+
+    <div class="card">
+      <svg viewBox="0 0 200 120">
+        <rect width="200" height="120" rx="12" fill="#dcfce7"/>
+        <circle cx="100" cy="60" r="30" fill="#16a34a"/>
+      </svg>
+      <h3>Landing Pages</h3>
+      <p>Diseñadas para convertir tráfico en clientes.</p>
+    </div>
+
+    <div class="card">
+      <svg viewBox="0 0 200 120">
+        <rect width="200" height="120" rx="12" fill="#fff7ed"/>
+        <polygon points="100,20 160,100 40,100" fill="#f97316"/>
+      </svg>
+      <h3>Publicidad Digital</h3>
+      <p>Google Ads y Meta Ads con estrategia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <h2>Haz que internet trabaje para ti</h2>
+  <p>Agenda una asesoría gratuita y empieza a vender.</p>
+  <a class="btn" href="https://wa.me/573000000000">Hablar por WhatsApp</a>
+</section>
+
+<footer>
+  © 2026 TwoAds Marketing Digital · Todos los derechos reservados
+</footer>
 
 </body>
 </html>
