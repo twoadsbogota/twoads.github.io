@@ -1,485 +1,821 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diseño de Landing Pages y Sitios Web</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwoAds Marketing Digital</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#030712;
+    color:white;
+    overflow-x:hidden;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.container{
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(3,7,18,.85);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo img{
+    width:170px;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+    color:white;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
+
+.menu a:hover{
+    color:#1d7eff;
+}
+
+.menu a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0%;
+    height:2px;
+    background:#1d7eff;
+    transition:.3s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+.btn-nav{
+    background:#1d7eff;
+    padding:15px 28px;
+    border-radius:14px;
+    color:white;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-nav:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(29,126,255,.4);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#1d7eff30 0%, transparent 70%);
+    right:-200px;
+    top:-200px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,#0f3d9140 0%, transparent 70%);
+    left:-250px;
+    bottom:-250px;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+    position:relative;
+    z-index:2;
+    padding-top:120px;
+}
+
+.hero-text h1{
+    font-size:4.4rem;
+    line-height:1.1;
+    margin-bottom:25px;
+    font-weight:800;
+}
+
+.hero-text h1 span{
+    color:#1d7eff;
+}
+
+.hero-text p{
+    color:#c5c5c5;
+    font-size:1.15rem;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.btn-primary{
+    background:#1d7eff;
+    color:white;
+    padding:18px 35px;
+    border-radius:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(29,126,255,.5);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    padding:18px 35px;
+    border-radius:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:#030712;
+}
+
+.hero-features{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.hero-features span{
+    color:#d4d4d4;
+    font-size:14px;
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image img{
+    width:100%;
+    animation:float 5s ease-in-out infinite;
+    border-radius:25px;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
+}
+
+/* SECTIONS */
+
+section{
+    padding:110px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title span{
+    color:#1d7eff;
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:14px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    margin-top:12px;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:linear-gradient(180deg,#0d1529,#0a101f);
+    padding:40px;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.05);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:4px;
+    background:#1d7eff;
+    left:0;
+    top:0;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    border-color:#1d7eff;
+}
+
+.service-card h3{
+    margin-bottom:18px;
+    font-size:1.5rem;
+}
+
+.service-card p{
+    color:#bfbfbf;
+    line-height:1.8;
+}
+
+/* BENEFITS */
+
+.benefits{
+    background:linear-gradient(180deg,#09101f,#0b1222);
+    border-radius:35px;
+    padding:70px;
+}
+
+.benefits-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+
+.benefit{
+    text-align:center;
+}
+
+.benefit h4{
+    color:#1d7eff;
+    margin:20px 0 10px;
+}
+
+.benefit p{
+    color:#bfbfbf;
+    line-height:1.7;
+}
+
+/* PORTFOLIO */
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+}
+
+.portfolio-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+}
+
+.portfolio-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.portfolio-item:hover img{
+    transform:scale(1.08);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
+    display:flex;
+    align-items:flex-end;
+    padding:30px;
+}
+
+.overlay h3{
+    font-size:1.5rem;
+}
+
+/* CTA */
+
+.cta{
+    background:linear-gradient(135deg,#1559d6,#1d7eff);
+    padding:70px;
+    border-radius:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.cta-logo img{
+    width:170px;
+    margin-bottom:15px;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.cta p{
+    color:#eef4ff;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 0;
+    border-top:1px solid rgba(255,255,255,.05);
+    text-align:center;
+    color:#9f9f9f;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    background:#25d366;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    color:white;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:980px){
+
+    .hero-content{
+        grid-template-columns:1fr;
+        text-align:center;
     }
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:#0b0f19;
-      color:white;
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-    }
-
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-    }
-
-    header{
-      padding:25px 0;
-      position:fixed;
-      width:100%;
-      top:0;
-      background:rgba(11,15,25,0.9);
-      backdrop-filter:blur(10px);
-      z-index:1000;
-    }
-
-    nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .logo{
-      font-size:1.6rem;
-      font-weight:700;
-      color:#00d4ff;
+    .hero-buttons,
+    .hero-features{
+        justify-content:center;
     }
 
     .menu{
-      display:flex;
-      gap:30px;
+        display:none;
     }
 
-    .menu a{
-      color:white;
-      transition:0.3s;
-      font-weight:500;
-    }
-
-    .menu a:hover{
-      color:#00d4ff;
-    }
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero::before{
-      content:'';
-      position:absolute;
-      width:700px;
-      height:700px;
-      background:#00d4ff20;
-      border-radius:50%;
-      top:-250px;
-      right:-250px;
-      filter:blur(80px);
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:650px;
-    }
-
-    .hero h1{
-      font-size:4rem;
-      line-height:1.1;
-      margin-bottom:20px;
-    }
-
-    .hero h1 span{
-      color:#00d4ff;
-    }
-
-    .hero p{
-      color:#cfcfcf;
-      font-size:1.1rem;
-      line-height:1.8;
-      margin-bottom:35px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:16px 35px;
-      background:#00d4ff;
-      color:#0b0f19;
-      border-radius:12px;
-      font-weight:700;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 10px 30px rgba(0,212,255,0.3);
-    }
-
-    section{
-      padding:110px 0;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:70px;
-    }
-
-    .section-title h2{
-      font-size:2.8rem;
-      margin-bottom:15px;
-    }
-
-    .section-title p{
-      color:#bcbcbc;
-    }
-
-    .services{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
-    }
-
-    .card{
-      background:#121826;
-      padding:40px;
-      border-radius:20px;
-      transition:0.4s;
-      border:1px solid #1d2638;
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-      border-color:#00d4ff;
-    }
-
-    .card h3{
-      margin-bottom:20px;
-      font-size:1.4rem;
-    }
-
-    .card p{
-      color:#c5c5c5;
-      line-height:1.7;
-    }
-
-    .benefits{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
-
-    .benefit{
-      background:#111827;
-      padding:30px;
-      border-radius:18px;
-      text-align:center;
-    }
-
-    .benefit h4{
-      margin-top:20px;
-      margin-bottom:10px;
-      color:#00d4ff;
-    }
-
-    .portfolio{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
-
-    .portfolio-item{
-      overflow:hidden;
-      border-radius:20px;
-      position:relative;
-    }
-
-    .portfolio-item img{
-      width:100%;
-      display:block;
-      transition:0.5s;
-    }
-
-    .portfolio-item:hover img{
-      transform:scale(1.08);
-    }
-
-    .portfolio-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      display:flex;
-      align-items:flex-end;
-      padding:25px;
+    .hero-text h1{
+        font-size:3rem;
     }
 
     .cta{
-      background:linear-gradient(135deg,#00d4ff,#0077ff);
-      border-radius:30px;
-      text-align:center;
-      padding:70px 40px;
+        text-align:center;
+        justify-content:center;
     }
 
     .cta h2{
-      font-size:3rem;
-      margin-bottom:20px;
-      color:#fff;
+        font-size:2.2rem;
     }
 
-    .cta p{
-      margin-bottom:30px;
-      color:#eef7ff;
+}
+
+@media(max-width:600px){
+
+    .hero-text h1{
+        font-size:2.3rem;
     }
 
-    footer{
-      padding:40px 0;
-      text-align:center;
-      color:#9b9b9b;
-      border-top:1px solid #1d2638;
-    }
-
-    .whatsapp{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      background:#25d366;
-      width:65px;
-      height:65px;
-      border-radius:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:2rem;
-      color:white;
-      z-index:999;
-      box-shadow:0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    @media(max-width:768px){
-
-      .hero h1{
-        font-size:2.8rem;
-      }
-
-      .menu{
-        display:none;
-      }
-
-      .section-title h2{
+    .section-title h2{
         font-size:2rem;
-      }
-
-      .cta h2{
-        font-size:2rem;
-      }
-
     }
 
-  </style>
+    .benefits{
+        padding:40px 25px;
+    }
+
+    .cta{
+        padding:50px 30px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-           <div class="logo">
+
+    <div class="container">
+
+        <nav>
+
+            <div class="logo">
                 <!-- COLOCA TU LOGO EN LA MISMA CARPETA -->
                 <img src="logo-twoads.png.png" alt="TwoAds">
             </div>
-      
-      <div class="menu">
-        <a href="#servicios">Servicios</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-    </nav>
-  </div>
+
+            <div class="menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#portafolio">Portafolio</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <a href="https://wa.me/573025125222" class="btn-nav">
+                Solicitar Cotización
+            </a>
+
+        </nav>
+
+    </div>
+
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Creamos <span>Landing Pages</span> y Sitios Web que generan clientes</h1>
+<!-- HERO -->
 
-      <p>
-        Diseñamos páginas modernas, rápidas y enfocadas en conversión para que puedas ofrecer tus productos y servicios profesionalmente en internet.
-      </p>
+<section class="hero" id="inicio">
 
-      <a href="https://wa.me/573025125222" class="btn">
-        Solicitar Cotización
-      </a>
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    Impulsa tu negocio con
+                    <span>Landing Pages y Sitios Web</span>
+                    que convierten
+                </h1>
+
+                <p>
+                    Diseñamos páginas modernas, rápidas y estratégicas
+                    para que ofrezcas tus productos y servicios
+                    y consigas más clientes en internet.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="https://wa.me/573025125222" class="btn-primary">
+                        Hablar por WhatsApp
+                    </a>
+
+                    <a href="#portafolio" class="btn-secondary">
+                        Ver Portafolio
+                    </a>
+
+                </div>
+
+                <div class="hero-features">
+
+                    <span>✔ Diseño Profesional</span>
+                    <span>✔ 100% Responsive</span>
+                    <span>✔ Optimizado para SEO</span>
+                    <span>✔ Alta Conversión</span>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
+
+<!-- SERVICIOS -->
 
 <section id="servicios">
-  <div class="container">
 
-    <div class="section-title">
-      <h2>Nuestros Servicios</h2>
-      <p>Soluciones digitales para emprendedores y empresas</p>
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>SERVICIOS</span>
+            <h2>Soluciones digitales para tu negocio</h2>
+
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <h3>Landing Pages</h3>
+
+                <p>
+                    Páginas enfocadas en convertir visitantes
+                    en clientes con diseños estratégicos y persuasivos.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Sitios Web Empresariales</h3>
+
+                <p>
+                    Sitios modernos y profesionales para mostrar tu empresa,
+                    servicios y generar confianza.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Tiendas Online</h3>
+
+                <p>
+                    Vende productos en línea con carrito de compras,
+                    pagos e inventario.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>SEO y Posicionamiento</h3>
+
+                <p>
+                    Optimizamos tu sitio para aparecer en Google
+                    y atraer clientes orgánicos.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Diseño Responsive</h3>
+
+                <p>
+                    Tu sitio se verá perfecto en celulares,
+                    tablets y computadores.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Integración WhatsApp</h3>
+
+                <p>
+                    Conecta con tus clientes al instante
+                    mediante automatizaciones inteligentes.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="services">
-
-      <div class="card">
-        <h3>Landing Pages</h3>
-        <p>
-          Páginas enfocadas en generar ventas, captar clientes y aumentar conversiones para campañas publicitarias.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Sitios Web Empresariales</h3>
-        <p>
-          Diseños profesionales para mostrar tu empresa, servicios, portafolio y generar confianza en internet.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Tiendas Online</h3>
-        <p>
-          Vende tus productos en línea con pasarelas de pago, carrito de compras y experiencia optimizada.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Optimización SEO</h3>
-        <p>
-          Posicionamos tu página en Google para atraer más visitas y potenciales clientes de forma orgánica.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Diseño Responsive</h3>
-        <p>
-          Sitios adaptados a celulares, tablets y computadores para ofrecer una experiencia moderna.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Integración WhatsApp</h3>
-        <p>
-          Conecta automáticamente con tus clientes mediante botones y formularios inteligentes.
-        </p>
-      </div>
-
-    </div>
-  </div>
 </section>
+
+<!-- BENEFICIOS -->
 
 <section id="beneficios">
-  <div class="container">
 
-    <div class="section-title">
-      <h2>¿Por qué elegirnos?</h2>
-      <p>Desarrollamos experiencias digitales modernas</p>
+    <div class="container">
+
+        <div class="benefits">
+
+            <div class="section-title">
+
+                <span>BENEFICIOS</span>
+                <h2>¿Por qué elegirnos?</h2>
+
+            </div>
+
+            <div class="benefits-grid">
+
+                <div class="benefit">
+
+                    <h4>Resultados Reales</h4>
+
+                    <p>
+                        Diseñamos con enfoque en conversión
+                        para generar ventas y clientes.
+                    </p>
+
+                </div>
+
+                <div class="benefit">
+
+                    <h4>Rápido y Seguro</h4>
+
+                    <p>
+                        Páginas rápidas, seguras y optimizadas
+                        para el mejor rendimiento.
+                    </p>
+
+                </div>
+
+                <div class="benefit">
+
+                    <h4>Soporte Personalizado</h4>
+
+                    <p>
+                        Acompañamiento continuo antes,
+                        durante y después del proyecto.
+                    </p>
+
+                </div>
+
+                <div class="benefit">
+
+                    <h4>Garantía de Calidad</h4>
+
+                    <p>
+                        Trabajamos con altos estándares
+                        para entregar sitios profesionales.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="benefits">
-
-      <div class="benefit">
-        <h4>Diseño Premium</h4>
-        <p>Interfaces modernas con apariencia profesional.</p>
-      </div>
-
-      <div class="benefit">
-        <h4>Alta Conversión</h4>
-        <p>Landing pages diseñadas para generar resultados.</p>
-      </div>
-
-      <div class="benefit">
-        <h4>Velocidad</h4>
-        <p>Páginas rápidas optimizadas para rendimiento.</p>
-      </div>
-
-      <div class="benefit">
-        <h4>Soporte</h4>
-        <p>Acompañamiento y asesoría para tu proyecto.</p>
-      </div>
-
-    </div>
-
-  </div>
 </section>
+
+<!-- PORTAFOLIO -->
 
 <section id="portafolio">
-  <div class="container">
 
-    <div class="section-title">
-      <h2>Portafolio</h2>
-      <p>Algunos estilos de proyectos digitales</p>
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>PORTAFOLIO</span>
+            <h2>Algunos de nuestros proyectos</h2>
+
+        </div>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-item">
+
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="overlay">
+
+                    <h3>Landing Comercial</h3>
+
+                </div>
+
+            </div>
+
+            <div class="portfolio-item">
+
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="overlay">
+
+                    <h3>Sitio Empresarial</h3>
+
+                </div>
+
+            </div>
+
+            <div class="portfolio-item">
+
+                <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="overlay">
+
+                    <h3>Tienda Virtual</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="portfolio">
-
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="">
-        <div class="portfolio-overlay">
-          <h3>Landing Page Comercial</h3>
-        </div>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="">
-        <div class="portfolio-overlay">
-          <h3>Sitio Empresarial</h3>
-        </div>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="">
-        <div class="portfolio-overlay">
-          <h3>Tienda Virtual</h3>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
 </section>
 
+<!-- CTA -->
+
 <section id="contacto">
-  <div class="container">
 
-    <div class="cta">
+    <div class="container">
 
-      <h2>Impulsa tu negocio en internet</h2>
+        <div class="cta">
 
-      <p>
-        Creamos páginas web modernas que convierten visitantes en clientes.
-      </p>
+            <div class="cta-logo">
 
-      <a href="https://wa.me/573025125222" class="btn">
-        Hablar por WhatsApp
-      </a>
+                <img src="logo.png" alt="TwoAds">
+
+            </div>
+
+            <div>
+
+                <h2>
+                    ¿Listo para llevar tu negocio al siguiente nivel?
+                </h2>
+
+                <p>
+                    Creamos páginas web que atraen, convierten y hacen crecer tu negocio.
+                </p>
+
+            </div>
+
+            <a href="https://wa.me/573025125222" class="btn-secondary" style="background:white;color:#030712;">
+                Hablar por WhatsApp
+            </a>
+
+        </div>
 
     </div>
 
-  </div>
 </section>
 
 <footer>
-  <div class="container">
-    © 2026 WebStudio - Diseño y Desarrollo Web
-  </div>
+
+    <div class="container">
+
+        © 2026 TwoAds Marketing Digital. Todos los derechos reservados.
+
+    </div>
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/573025125222">
-  ☎
+<a href="https://wa.me/573025125222" class="whatsapp">
+    ☏
 </a>
 
 </body>
